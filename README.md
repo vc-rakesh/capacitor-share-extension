@@ -230,11 +230,16 @@ Set the activation rules in the extension's Info.plist, so that your app will be
                   $extensionItem.attachments,
                   $attachment,
                    ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.image" ||
+                           ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.plain-text" ||
+						   ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.url" ||
                            ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.spreadsheet" ||
                            ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.presentation" ||
                            ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "org.openxmlformats.wordprocessingml.document" ||
                            ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "com.adobe.pdf" ||
                            ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.png" ||
+                           ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.png" ||
+						   ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.jpeg" ||
+						   ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.jpeg-2000" ||
                            ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "com.compuserve.gif"
                 ).@count == $extensionItem.attachments.@count
                 ).@count == 1
